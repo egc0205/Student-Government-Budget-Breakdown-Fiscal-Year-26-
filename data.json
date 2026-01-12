@@ -1,0 +1,85 @@
+{
+  "_disclaimer": "Each expense amount = expense - revenue --> so expenseAmount = netExpenseAmount",
+
+  "ecs_Expense": [
+    { "expenseType": "Analog Center", "expenseAmount": 546317, "color": "#00b18b" },
+    { "expenseType": "Bioengineering", "expenseAmount": 1931569, "color": "#0bbbbb" },
+    { "expenseType": "Computer Science", "expenseAmount": 4029026, "color": "#1ae3e1" },
+    { "expenseType": "ECS Student Services", "expenseAmount": 2463311, "color": "#2ad8fc" },
+    { "expenseType": "Electrical & Computer Engineering", "expenseAmount": 1978080, "color": "#3cacfd" },
+    { "expenseType": "Engineering & Computer Science", "expenseAmount": 9947592, "color": "#9ebcda" },
+    { "expenseType": "Material Science Engineering", "expenseAmount": 695755, "color": "#dabc9e" },
+    { "expenseType": "Mechanical Engineering", "expenseAmount": 2473002, "color": "#fd8d3c" },
+    { "expenseType": "System Engineering", "expenseAmount": 1223970, "color": "#fc4e2a" },
+    { "expenseType": "Salaries & Wages (Education)", "expenseAmount": 35910262, "color": "#e31a1c" },
+    { "expenseType": "Salaries & Wages (Research)", "expenseAmount": 1318993, "color": "#bb0b0b" },
+    { "expenseType": "Other Research Expenses", "expenseAmount": 7992000.00, "color": "#b10026" }
+  ],
+
+  "_section1": "Data for Fiscal Year 2026 Page",
+
+  "FY26_Expense": [
+  { "expenseType": "Instruction", "expenseAmount": 253679835, "percentChange": -5.6, "color": "#00b18b" },
+  { "expenseType": "Research", "expenseAmount": 153774046, "percentChange": 0.7, "color": "#0bbbbb" },
+  { "expenseType": "Depreciation and Amortization", "expenseAmount": 113744271, "percentChange": 11.5, "color": "#1ae3e1" },
+  { "expenseType": "Academic Support", "expenseAmount": 102917687, "percentChange": -7.7, "color": "#2ad8fc" },
+  { "expenseType": "Operation and Maintenance of Plant", "expenseAmount": 73180194, "percentChange": -3.2, "color": "#3cacfd" },
+  { "expenseType": "Institutional Support", "expenseAmount": 54200026, "percentChange": -17.7, "color": "#9ebcda" },
+  { "expenseType": "Auxiliary Enterprises", "expenseAmount": 54055426, "percentChange": -5.3, "color": "#dabc9e" },
+  { "expenseType": "Scholarships and Fellowships", "expenseAmount": 52158181, "percentChange": 9.0, "color": "#fd8d3c" },
+  { "expenseType": "Student Services", "expenseAmount": 30306846, "percentChange": 4.2, "color": "#fc4e2a" },
+  { "expenseType": "Public Service", "expenseAmount": 13680719, "percentChange": -3.9, "color": "#e31a1c" }
+],
+
+"FY26_Operating_Revenue": [
+  { "revenueType": "Net Tuition and Fees", "revenueAmount": 339451172, "percentChange": -5.2, "color": "#00b18b" },
+  { "revenueType": "Federal Sponsored Programs", "revenueAmount": 90193587, "percentChange": 6.2, "color": "#1ae3e1" },
+  { "revenueType": "State Sponsored Programs", "revenueAmount": 22909270, "percentChange": 18.8, "color": "#2ad8fc" },
+  { "revenueType": "Local and Private Sponsored Programs", "revenueAmount": 12478256, "percentChange": -7.1, "color": "#3cacfd" },
+  { "revenueType": "Net Sales and Services of Educational Activities", "revenueAmount": 44438798, "percentChange": 6.4, "color": "#9ebcda" },
+  { "revenueType": "Net Auxiliary Enterprises", "revenueAmount": 59146129, "percentChange": 2.8, "color": "#dabc9e" },
+  { "revenueType": "Other Operating Revenues", "revenueAmount": 13922800, "percentChange": 13.8, "color": "#fd8d3c" }
+],
+
+"FY26_Non-operating_Revenue": [
+  { "revenueType": "State Appropriations", "revenueAmount": 177157172, "percentChange": 0.1, "color": "#00b18b" },
+  { "revenueType": "Federal Sponsored Programs - Nonoperating", "revenueAmount": 41250000, "percentChange": -0.5, "color": "#0bbbbb" },
+  { "revenueType": "State/Local Sponsored Programs - Nonoperating", "revenueAmount": 4363794, "percentChange": 890.6, "color": "#1ae3e1" },
+  { "revenueType": "Gifts in Support of Operations", "revenueAmount": 13585000, "percentChange": -17.4, "color": "#2ad8fc" },
+  { "revenueType": "Net Investment Income", "revenueAmount": 80849605, "percentChange": 15.2, "color": "#3cacfd" }
+],
+
+"_section2": "Additional Data for Budget Cuts Page",
+
+"FY25_Operating_Revenue":[
+  { "revenueType": "Net Tuition and Fees", "revenueAmount": 374782337, "color": "#00b18b" },
+  { "revenueType": "Federal Sponsored Programs", "revenueAmount": 84943183, "color": "#1ae3e1" },
+  { "revenueType": "State Sponsored Programs", "revenueAmount": 19290289, "color": "#2ad8fc" },
+  { "revenueType": "Local and Private Sponsored Programs", "revenueAmount": 13426067, "color": "#3cacfd" },
+  { "revenueType": "Net Sales and Services of Educational Activities", "revenueAmount": 41757115, "color": "#9ebcda" },
+  { "revenueType": "Net Auxiliary Enterprises", "revenueAmount": 57535948, "color": "#dabc9e" },
+  { "revenueType": "Other Operating Revenues", "revenueAmount": 12230413, "color": "#fd8d3c" }
+],
+
+"FY25_Non-operating_Revenue":[
+  { "revenueType": "State Appropriations", "revenueAmount": 176897505, "color": "#00b18b" },
+  { "revenueType": "Federal Sponsored Programs - Nonoperating", "revenueAmount": 41450000, "color": "#0bbbbb" },
+  { "revenueType": "State/Local Sponsored Programs - Nonoperating", "revenueAmount": 440500, "color": "#1ae3e1" },
+  { "revenueType": "Gifts in Support of Operations", "revenueAmount": 16453000, "color": "#2ad8fc" },
+  { "revenueType": "Net Investment Income", "revenueAmount": 70195107, "color": "#3cacfd" }
+],
+
+"FY25_Expense":[
+  { "expenseType": "Instruction", "expenseAmount": 268753073, "color": "#00b18b" },
+  { "expenseType": "Research", "expenseAmount": 152720704, "color": "#0bbbbb" },
+  { "expenseType": "Academic Support", "expenseAmount": 111481261, "color": "#1ae3e1" },
+  { "expenseType": "Depreciation and Amortization", "expenseAmount": 102053018, "color": "#2ad8fc" },
+  { "expenseType": "Operation and Maintenance of Plant", "expenseAmount": 75584599, "color": "#3cacfd" },
+  { "expenseType": "Institutional Support", "expenseAmount": 65817558, "color": "#9ebcda" },
+  { "expenseType": "Auxiliary Enterprises", "expenseAmount": 57070460, "color": "#dabc9e" },
+  { "expenseType": "Scholarships and Fellowships", "expenseAmount": 47845331, "color": "#fd8d3c" },
+  { "expenseType": "Student Services", "expenseAmount": 29072557, "color": "#fc4e2a" },
+  { "expenseType": "Public Service", "expenseAmount": 14231641, "color": "#e31a1c" }
+]
+
+}

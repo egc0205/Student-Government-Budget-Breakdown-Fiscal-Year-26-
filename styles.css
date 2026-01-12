@@ -1,0 +1,131 @@
+/* =========================================
+   1. GLOBAL RESET & BASIC SETUP
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8; /* Light grey-blue background */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* =========================================
+   2. MAIN LAYOUT (SIDEBAR + CONTENT)
+   ========================================= */
+.container {
+    display: flex; /* Puts Sidebar and Main next to each other */
+    height: 100%;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Dark Navy */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-shrink: 0; /* Prevents sidebar from shrinking on small screens */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    border-bottom: 1px solid #34495e;
+    padding-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #bdc3c7;
+    font-size: 18px;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #34495e;
+    color: #ffffff;
+    padding-left: 20px; /* Slight movement effect */
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex: 1; /* Takes up all remaining space */
+    padding: 40px;
+    overflow-y: auto; /* Allows scrolling ONLY inside the content area */
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+/* =========================================
+   3. CHART CARDS & GRID
+   ========================================= */
+.charts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between each chart card */
+    padding-bottom: 50px; /* Extra space at bottom for scrolling */
+}
+
+.chart-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Subtle shadow */
+    padding: 25px;
+    border: 1px solid #e1e4e8;
+}
+
+.chart-card h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 600;
+    border-left: 5px solid #3cacfd; /* Blue accent line on title */
+    padding-left: 10px;
+}
+
+/* =========================================
+   4. SPECIFIC CHART DIMENSIONS
+   ========================================= */
+/* IMPORTANT: 
+   AMCharts will fail to load if the div has 0 height.
+   We must set a fixed height for every chart ID.
+*/
+
+#chart_Operating_Revenue25, #chart_Operating_Revenue26, #chart_Operating_RevenueChange26,
+#chart_Non-operating_Revenue25, #chart_Non-operating_Revenue26, #chart_Non-operating_RevenueChange26,
+#chart_Expense25, #chart_Expense26, #chart_ExpenseChange26,
+#chart_ecs_Expense {
+    width: 100%;
+    height: 500px; /* Tall enough for both Pie and Bar */
+}
