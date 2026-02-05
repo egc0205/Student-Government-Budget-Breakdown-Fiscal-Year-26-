@@ -16,6 +16,44 @@
     { "expenseType": "Other Research Expenses", "expenseAmount": 7992000.00, "color": "#b10026" }
   ],
 
+  "bbs_Designated_Tuition": [
+    { "tuitionType": "Graduate", "tuitionAmount": 331610, "color": "#0bbbbb" },
+    { "tuitionType": "Undergraduate", "tuitionAmount": 0, "color": "#00b18a" }
+  ],
+
+  "bbs_Expense": [
+    { "expenseType": "Salaries and Wages (Education)", "expenseNetAmount": 10975474, "color": "#00b18b" },
+    { "expenseType": "Salaries and Wages (Research)", "expenseNetAmount": 518028, "color": "#0bbbbb" },
+    { "expenseType": "Other Research Expenses", "expenseNetAmount": 1237000, "color": "#1ae3e1" },
+    { "expenseType": "Behavioral and Brain Sciences", "expenseNetAmount": 6612333, "color": "#2ad8fc" },
+    { "expenseType": "Neuroscience", "expenseNetAmount": 1732326, "color": "#3cacfd" },
+    { "expenseType": "Psychology", "expenseNetAmount": 1379355, "color": "#9ebcda" },
+    { "expenseType": "Speech Language Hearing", "expenseNetAmount": 884563, "color": "#dabc9e" }
+  ],
+
+  "epps_Designated_Tuition": [
+    { "tuitionType": "Graduate", "tuitionAmount": 68225, "color": "#0bbbbb" },
+    { "tuitionType": "Undergraduate", "tuitionAmount": 0, "color": "#00b18a" }
+  ],
+
+  "epps_Expense": [
+    { "expenseType": "Salaries and Wages (Education)", "expenseNetAmount": 8250727, "color": "#00b18b" },
+    { "expenseType": "Other Research Expenses", "expenseNetAmount": 192000, "color": "#0bbbbb" },
+    { "expenseType": "Political Science", "expenseNetAmount": 50077, "color": "#1ae3e1" },
+    { "expenseType": "Economic Political and Policy", "expenseNetAmount": 5833698, "color": "#2ad8fc" },
+    { "expenseType": "Geography & Geospatial", "expenseNetAmount": 2055, "color": "#3cacfd" },
+    { "expenseType": "IPE-PPE", "expenseNetAmount": 2313, "color": "#9ebcda" },
+    { "expenseType": "Institute for Urban Policy", "expenseNetAmount": 1184, "color": "#dabc9e" },
+    { "expenseType": "Public & Nonprofit Management", "expenseNetAmount": 356, "color": "#fd8d3c" },
+    { "expenseType": "Sociology", "expenseNetAmount": 467, "color": "#fc4e2a" },
+    { "expenseType": "Texas Schools Project", "expenseNetAmount": 59067, "color": "#e31a1c" }
+  ],
+
+  "is_Expense": [
+    { "expenseType": "Salaries and Wages (Education)", "expenseNetAmount": 1639304, "color": "#00b18a" },
+    { "expenseType": "Interdisciplinary Studies", "expenseNetAmount": 1057662, "color": "#0bbbbb" }
+  ],
+
   "_section1": "Data for Fiscal Year 2026 Page",
 
   "FY26_Expense": [
