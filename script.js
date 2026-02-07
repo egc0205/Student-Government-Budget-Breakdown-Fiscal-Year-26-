@@ -341,6 +341,116 @@ am5.ready(function() {
     }
 
     // ============================================================
+    // Auxiliary Budget Stacked Bar Builder
+    // ============================================================
+
+    function buildAuxiliaryChart(divID, datasetKey, unitName) {
+
+        var root = am5.Root.new(divID);
+        root.setThemes([am5themes_Animated.new(root)]);
+        root.numberFormatter.set("bigNumberPrefixes", [
+            { number: 1e3, suffix: "K" },
+            { number: 1e6, suffix: "M" },
+            { number: 1e9, suffix: "B" }
+        ]);
+
+        var chart = root.container.children.push(am5xy.XYChart.new(root, {
+            layout: root.verticalLayout,
+            paddingTop: 40, paddingRight: 30, paddingLeft: 40, paddingBottom: 20
+        }));
+
+        var legend = chart.children.unshift(am5.Legend.new(root, {
+            centerX: am5.percent(50), x: am5.percent(50),
+            marginBottom: 18, paddingBottom: 8, layout: root.horizontalLayout
+        }));
+        legend.labels.template.setAll({ fontSize: 13, fontWeight: "500" });
+        legend.valueLabels.template.set("forceHidden", true);
+
+        var seriesDefs = [
+            { field: "BudgetedExpenses", name: "Budgeted Expenses", color: "#00b18b" },
+            { field: "DebtService",      name: "Debt Service",      color: "#2ad8fc" },
+            { field: "TotalTransfers",   name: "Total Transfers",   color: "#fd8d3c" },
+            { field: "Revenue",          name: "Revenue",           color: "#3cacfd" }
+        ];
+
+        fetch("data.json")
+        .then(r => r.json())
+        .then(fullData => {
+
+            var units = fullData[datasetKey];
+            if (!units) { console.error("Missing data:", datasetKey); return; }
+
+            var unit = units.find(u => u.unit === unitName);
+            if (!unit) { console.error("Missing unit:", unitName); return; }
+
+            var chartData = [
+                { category: "Expenses", BudgetedExpenses: unit.budgetedExpenses, DebtService: unit.debtService, TotalTransfers: unit.totalTransfers },
+                { category: "Revenue",  Revenue: unit.revenue }
+            ];
+
+            var xRenderer = am5xy.AxisRendererX.new(root, { cellStartLocation: 0.1, cellEndLocation: 0.9, minGridDistance: 40 });
+            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, { categoryField: "category", renderer: xRenderer }));
+            xAxis.data.setAll(chartData);
+
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                renderer: am5xy.AxisRendererY.new(root, { strokeOpacity: 0.1 }),
+                numberFormat: "$#.#a", min: 0, extraMax: 0.05
+            }));
+
+            seriesDefs.forEach(function(def) {
+                var hasValue = chartData.some(function(item) { return item[def.field] !== undefined && item[def.field] > 0; });
+
+                var tooltip = am5.Tooltip.new(root, { paddingTop: 6, paddingBottom: 6, paddingLeft: 10, paddingRight: 10 });
+                tooltip.label.setAll({ textAlign: "center", oversizedBehavior: "wrap", maxWidth: 220, fontSize: 12, fontWeight: "600" });
+                tooltip.label.adapters.add("text", function(text, target) {
+                    if (target.dataItem) {
+                        var val = target.dataItem.get("valueY");
+                        if (val !== undefined && val !== null && val !== 0) {
+                            var absVal = Math.abs(val);
+                            var formatted = absVal >= 1e9 ? "$" + absVal/1e9 + "B" : absVal >= 1e6 ? "$" + absVal/1e6 + "M" : "$" + absVal/1e3 + "K";
+                            return def.name + ": [bold]" + formatted + "[/]";
+                        }
+                    }
+                    return text;
+                });
+
+                var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                    name: def.name, xAxis: xAxis, yAxis: yAxis,
+                    valueYField: def.field, categoryXField: "category",
+                    stacked: true, tooltip: tooltip
+                }));
+
+                if (!hasValue) { series.set("visible", false); }
+
+                series.columns.template.setAll({
+                    fill: am5.color(def.color), strokeOpacity: 0, width: am5.percent(50),
+                    cornerRadiusTL: 7, cornerRadiusTR: 7, cornerRadiusBL: 7, cornerRadiusBR: 7
+                });
+
+                series.bullets.push(function() {
+                    var label = am5.Label.new(root, {
+                        text: def.name + "\n$[bold]{valueY.formatNumber('#.#a')}",
+                        populateText: true, centerX: am5.percent(50), centerY: am5.percent(50),
+                        fill: am5.color(0xffffff), fontSize: 13, fontWeight: "600",
+                        textAlign: "center", oversizedBehavior: "wrap", maxWidth: 170
+                    });
+                    label.adapters.add("visible", function(_, target) {
+                        var item = target.dataItem;
+                        return item && (item.get("valueY") || 0) > 0;
+                    });
+                    return am5.Bullet.new(root, { sprite: label, locationY: 0.5 });
+                });
+
+                series.data.setAll(chartData);
+                if (hasValue) { legend.data.push(series); }
+            });
+
+            chart.set("cursor", am5xy.XYCursor.new(root, { behavior: "none" }));
+            chart.appear(900, 120);
+        });
+    }
+
+    // ============================================================
     // EXECUTE (Only if elements exist)
     // ============================================================
     
@@ -386,6 +496,21 @@ am5.ready(function() {
         buildComparison("chart_Expense25", "chart_ExpenseChange26", "FY25_Expense", "FY26_Expense", true);
     }
 
+
+    // ============================================================
+    // Page: Auxiliary Budget
+    // ============================================================
+
+    if (document.getElementById("housingChart")) {
+        buildAuxiliaryChart("housingChart", "FY26_Auxiliary_Budget", "Housing");
+    }
+
+    if (document.getElementById("urecChart")) {
+        buildAuxiliaryChart("urecChart", "FY26_Auxiliary_Budget", "University Recreation");
+    }
+
+    if (document.getElementById("parkingChart")) {
+        buildAuxiliaryChart("parkingChart", "FY26_Auxiliary_Budget", "Parking & Transportation");
+    }
+
 });
-
-

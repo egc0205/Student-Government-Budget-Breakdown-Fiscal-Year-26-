@@ -77,6 +77,14 @@
   { "revenueType": "Net Investment Income", "revenueAmount": 80849605, "percentChange": 15.2, "color": "#3cacfd" }
 ],
 
+"_section_auxiliary": "Data for Auxiliary Budget Page",
+
+"FY26_Auxiliary_Budget": [
+  { "unit": "Housing", "revenue": 46424777, "budgetedExpenses": 16970207, "debtService": 16710535, "totalTransfers": 6182108 },
+  { "unit": "University Recreation", "revenue": 100000, "budgetedExpenses": 2568655, "debtService": 0, "totalTransfers": 2468655 },
+  { "unit": "Parking & Transportation", "revenue": 8480000, "budgetedExpenses": 3630759, "debtService": 2774751, "totalTransfers": 1110070 }
+],
+
 "_section2": "Additional Data for Budget Cuts Page",
 
 "FY25_Operating_Revenue":[
