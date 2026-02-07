@@ -362,7 +362,7 @@ am5.ready(function() {
 
         if (divID === "chart_AHT_Revenue") datasetKey = "AHT_Revenue";
 
-        buildFY26Graphs(divID, datasetKey, true);
+        buildFY26Graphs(divID, datasetKey, false);
     }
 
     function buildExpensesBySchoolGraph(divID) {
